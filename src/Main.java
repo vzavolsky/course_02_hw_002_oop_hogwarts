@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        Hogwarts bestPupil = null;
 
         Gryffindor granger = new Gryffindor("Germiona", 50, 15,23,41,90);
         Gryffindor potter = new Gryffindor("Harry",23,41,15,53,90);
