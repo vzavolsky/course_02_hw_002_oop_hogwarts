@@ -30,6 +30,7 @@ public class Main {
     public static void compareTwoPupils(Hogwarts green, Hogwarts red) {
         Hogwarts hierPowerPupil;
         Hogwarts lesPowerPupil;
+        // Данная реализация показалась более интересной, чем если использовать if else и т.д.
         hierPowerPupil = green.getPowerOfMagic() > red.getPowerOfMagic() ? green : red;
         lesPowerPupil = green.getPowerOfMagic() < red.getPowerOfMagic() ? green : red;
         System.out.printf("%s обладает большей мощностью магии, чем %s.%n",hierPowerPupil.getStudentName(), lesPowerPupil.getStudentName());
