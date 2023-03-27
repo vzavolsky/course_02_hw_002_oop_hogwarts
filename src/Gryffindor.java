@@ -10,6 +10,14 @@ public class Gryffindor extends Hogwarts {
         this.courage = courage;
     }
 
+    public Gryffindor(String studentName) {
+        super(studentName);
+        RandomValue randomValue = new RandomValue();
+        this.nobility = randomValue.nextInt();
+        this.honor = randomValue.nextInt();
+        this.courage = randomValue.nextInt();
+    }
+
     @Override
     public String toString() {
         return "Gryffindor {" +
@@ -20,6 +28,22 @@ public class Gryffindor extends Hogwarts {
                 ", honor = " + honor +
                 ", courage = " + courage +
                 '}';
+    }
+
+    public int sumOfSkills() {
+        return  this.getTransgressionDistance() +
+                this.getPowerOfMagic() +
+                this.getCourage() +
+                this.getNobility() +
+                this.getHonor();
+    }
+
+    public void compareTwoPupils(Gryffindor gryffindor) {
+        Gryffindor winner;
+        Gryffindor looser;
+        winner = this.sumOfSkills() > gryffindor.sumOfSkills() ? this : gryffindor;
+        looser = this.sumOfSkills() < gryffindor.sumOfSkills() ? this : gryffindor;
+        System.out.printf("%s более способный ученик Gryffindor, чем %s.%n", winner.getStudentName(), looser.getStudentName());
     }
 
     public int getNobility() {

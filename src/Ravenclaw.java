@@ -12,17 +12,43 @@ public class Ravenclaw extends Hogwarts {
         this.resourcefulness = resourcefulness;
     }
 
+    public Ravenclaw(String studentName) {
+        super(studentName);
+        RandomValue randomValue = new RandomValue();
+        this.intelligence = randomValue.nextInt();
+        this.wisdom = randomValue.nextInt();
+        this.wit = randomValue.nextInt();
+        this.resourcefulness = randomValue.nextInt();
+    }
+
     @Override
     public String toString() {
         return "Ravenclaw {" +
                 "studentName = '" + super.getStudentName() + '\'' +
                 ", powerOfMagic = " + super.getPowerOfMagic() +
                 ", transgressionDistance = " + super.getTransgressionDistance() +
-                "intelligence = " + intelligence +
+                ", intelligence = " + intelligence +
                 ", wisdom = " + wisdom +
                 ", wit = " + wit +
                 ", resourcefulness = " + resourcefulness +
                 '}';
+    }
+
+    public int sumOfSkills() {
+        return  this.getTransgressionDistance() +
+                this.getPowerOfMagic() +
+                this.getIntelligence() +
+                this.getResourcefulness() +
+                this.getWisdom() +
+                this.getWit();
+    }
+
+    public void compareTwoPupils(Ravenclaw ravenclaw) {
+        Ravenclaw winner;
+        Ravenclaw looser;
+        winner = this.sumOfSkills() > ravenclaw.sumOfSkills() ? this : ravenclaw;
+        looser = this.sumOfSkills() < ravenclaw.sumOfSkills() ? this : ravenclaw;
+        System.out.printf("%s более способный ученик Ravenclaw, чем %s.%n", this.getStudentName(), looser.getStudentName());
     }
 
     public int getIntelligence() {

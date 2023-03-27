@@ -5,7 +5,7 @@ public class GetTheBestPupil {
         int sumOfSkills = 0;
         int maxPupilIndex = 0;
         for (int i = 0; i < pupilsOfHogwarts.length; i++) {
-            sumOfSkills = pupilsOfHogwarts[i].getTransgressionDistance() + pupilsOfHogwarts[i].getPowerOfMagic();
+            sumOfSkills = pupilsOfHogwarts[i].sumOfSkills();
             if (maxScores < sumOfSkills) {
                 maxPupilIndex = i;
                 maxScores = sumOfSkills;
@@ -19,12 +19,7 @@ public class GetTheBestPupil {
         int sumOfSkills = 0;
         int maxPupilIndex = 0;
         for (int i = 0; i < objects.length; i++) {
-            sumOfSkills = objects[i].getTransgressionDistance() +
-                    objects[i].getPowerOfMagic() +
-                    objects[i].getIntelligence() +
-                    objects[i].getResourcefulness() +
-                    objects[i].getWisdom() +
-                    objects[i].getWit();
+            sumOfSkills = objects[i].sumOfSkills();
             if (maxScores < sumOfSkills) {
                 maxPupilIndex = i;
                 maxScores = sumOfSkills;
@@ -38,11 +33,7 @@ public class GetTheBestPupil {
         int sumOfSkills = 0;
         int maxPupilIndex = 0;
         for (int i = 0; i < objects.length; i++) {
-            sumOfSkills = objects[i].getTransgressionDistance() +
-                    objects[i].getPowerOfMagic() +
-                    objects[i].getCourage() +
-                    objects[i].getNobility() +
-                    objects[i].getHonor();
+            sumOfSkills = objects[i].sumOfSkills();
             if (maxScores < sumOfSkills) {
                 maxPupilIndex = i;
                 maxScores = sumOfSkills;
@@ -56,11 +47,7 @@ public class GetTheBestPupil {
         int sumOfSkills = 0;
         int maxPupilIndex = 0;
         for (int i = 0; i < objects.length; i++) {
-            sumOfSkills = objects[i].getTransgressionDistance() +
-                    objects[i].getPowerOfMagic() +
-                    objects[i].getHonesty() +
-                    objects[i].getLoyalty() +
-                    objects[i].getHardWork();
+            sumOfSkills = objects[i].sumOfSkills();
             if (maxScores < sumOfSkills) {
                 maxPupilIndex = i;
                 maxScores = sumOfSkills;
@@ -74,13 +61,7 @@ public class GetTheBestPupil {
         int sumOfSkills = 0;
         int maxPupilIndex = 0;
         for (int i = 0; i < objects.length; i++) {
-            sumOfSkills = objects[i].getTransgressionDistance() +
-                    objects[i].getPowerOfMagic() +
-                    objects[i].getCunning() +
-                    objects[i].getAmbition() +
-                    objects[i].getDetermination() +
-                    objects[i].getLustForPower() +
-                    objects[i].getResourcefulness();
+            sumOfSkills = objects[i].sumOfSkills();
             if (maxScores < sumOfSkills) {
                 maxPupilIndex = i;
                 maxScores = sumOfSkills;
